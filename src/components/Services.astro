@@ -1,0 +1,112 @@
+---
+const services = [
+  {
+    title: 'Digital Transformation',
+    description: 'Revolutionize your presence in the digital realm with cutting-edge solutions',
+    features: ['AI Integration', 'Cloud Architecture', 'Quantum Computing'],
+    color: 'purple'
+  },
+  {
+    title: 'Creative Universe',
+    description: 'Unleash unlimited creative potential with our innovative design ecosystem',
+    features: ['3D Experiences', 'Virtual Worlds', 'Interactive Design'],
+    color: 'pink'
+  },
+  {
+    title: 'Connected Intelligence',
+    description: 'Bridge the gap between imagination and reality with smart connectivity',
+    features: ['IoT Solutions', 'Neural Networks', 'Edge Computing'],
+    color: 'blue'
+  },
+  {
+    title: 'Quantum Security',
+    description: 'Protect your digital assets with next-generation security protocols',
+    features: ['Blockchain', 'Zero Trust', 'Quantum Encryption'],
+    color: 'cyan'
+  }
+];
+
+const getGradient = (color: string) => {
+  const gradients = {
+    purple: 'from-purple-500 to-purple-700',
+    pink: 'from-pink-500 to-pink-700',
+    blue: 'from-blue-500 to-blue-700',
+    cyan: 'from-cyan-500 to-cyan-700'
+  };
+  return gradients[color as keyof typeof gradients] || gradients.purple;
+};
+---
+
+<section id="services" class="relative py-20 px-4 bg-black">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">
+        <span class="text-gradient">Our Services</span>
+      </h2>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto">
+        Comprehensive solutions designed to elevate your digital presence
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      {services.map((service, index) => (
+        <div 
+          class="glass-card group relative overflow-hidden"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <!-- Animated Background -->
+          <div class={`absolute inset-0 bg-gradient-to-br ${getGradient(service.color)} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+          
+          <!-- Content -->
+          <div class="relative z-10">
+            <!-- Icon -->
+            <div class={`w-14 h-14 rounded-lg bg-gradient-to-r ${getGradient(service.color)} flex items-center justify-center mb-4`}>
+              <span class="text-white text-2xl">⚡</span>
+            </div>
+            
+            <!-- Title & Description -->
+            <h3 class="text-2xl font-bold text-white mb-3">{service.title}</h3>
+            <p class="text-white/70 mb-4">{service.description}</p>
+            
+            <!-- Features -->
+            <ul class="space-y-2 mb-6">
+              {service.features.map((feature) => (
+                <li class="flex items-center text-white/80">
+                  <span class={`w-2 h-2 rounded-full bg-gradient-to-r ${getGradient(service.color)} mr-3`}></span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            
+            <!-- CTA -->
+            <button class="glass-button text-white text-sm group-hover:scale-105 transition-transform">
+              Learn More →
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Process Section -->
+    <div class="mt-20">
+      <h3 class="text-3xl font-bold text-white text-center mb-12">Our Process</h3>
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-4">
+        {['Discover', 'Design', 'Develop', 'Deploy'].map((step, index) => (
+          <div class="flex flex-col items-center text-center flex-1">
+            <div class="glass w-20 h-20 rounded-full flex items-center justify-center mb-4 relative">
+              <span class="text-2xl font-bold text-gradient">{index + 1}</span>
+              {index < 3 && (
+                <div class="hidden md:block absolute left-full top-1/2 -translate-y-1/2 w-full">
+                  <div class="h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30"></div>
+                </div>
+              )}
+            </div>
+            <h4 class="text-xl font-semibold text-white">{step}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

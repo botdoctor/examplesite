@@ -1,0 +1,124 @@
+---
+---
+
+<section id="contact" class="relative py-20 px-4 bg-black">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">
+        <span class="text-gradient">Get In Touch</span>
+      </h2>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto">
+        Ready to explore the infinite possibilities? Let's connect and create something extraordinary
+      </p>
+    </div>
+
+    <!-- Contact Grid -->
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="glass-card">
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-white mb-2">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              class="w-full px-4 py-3 rounded-lg glass text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              placeholder="Your name"
+            />
+          </div>
+          
+          <div>
+            <label for="email" class="block text-white mb-2">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              class="w-full px-4 py-3 rounded-lg glass text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              placeholder="your@email.com"
+            />
+          </div>
+          
+          <div>
+            <label for="message" class="block text-white mb-2">Message</label>
+            <textarea 
+              id="message" 
+              name="message"
+              rows="5"
+              class="w-full px-4 py-3 rounded-lg glass text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+              placeholder="Tell us about your project..."
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="w-full glass-button text-white py-4 font-semibold text-lg relative overflow-hidden group">
+            <span class="relative z-10">Send Message</span>
+            <span class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-8">
+        <!-- Info Cards -->
+        <div class="glass-card">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-xl">📧</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-1">Email Us</h3>
+              <p class="text-white/70">hello@onerverse.com</p>
+              <p class="text-white/70">support@onerverse.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-xl">🌐</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-1">Connect</h3>
+              <p class="text-white/70">Follow us on social media</p>
+              <div class="flex space-x-3 mt-3">
+                <a href="#" class="w-8 h-8 rounded-full glass flex items-center justify-center text-white hover:scale-110 transition-transform">
+                  <span class="text-sm">X</span>
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full glass flex items-center justify-center text-white hover:scale-110 transition-transform">
+                  <span class="text-sm">in</span>
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full glass flex items-center justify-center text-white hover:scale-110 transition-transform">
+                  <span class="text-sm">ig</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-pink-500 to-orange-500 flex items-center justify-center flex-shrink-0">
+              <span class="text-white text-xl">🚀</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-1">Office Hours</h3>
+              <p class="text-white/70">Monday - Friday: 9:00 - 18:00</p>
+              <p class="text-white/70">Weekend: By appointment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector('form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for your message! We\'ll get back to you soon.');
+    form.reset();
+  });
+</script>

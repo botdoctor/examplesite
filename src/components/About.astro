@@ -1,0 +1,110 @@
+---
+const features = [
+  {
+    title: 'Infinite Possibilities',
+    description: 'Unlock boundless potential in a universe where creativity knows no limits',
+    icon: '∞',
+    gradient: 'from-purple-500 to-pink-500'
+  },
+  {
+    title: 'Quantum Innovation',
+    description: 'Harness cutting-edge technology that transcends traditional boundaries',
+    icon: '⚛',
+    gradient: 'from-blue-500 to-cyan-500'
+  },
+  {
+    title: 'Unified Experience',
+    description: 'Seamlessly connect across dimensions of digital interaction',
+    icon: '◈',
+    gradient: 'from-pink-500 to-orange-500'
+  }
+];
+---
+
+<section id="about" class="relative py-20 px-4 bg-black">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">
+        <span class="text-gradient">About Onerverse</span>
+      </h2>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto">
+        Where imagination meets innovation in a singular digital cosmos
+      </p>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <!-- Left Content -->
+      <div class="space-y-6">
+        <div class="glass-card">
+          <h3 class="text-2xl font-bold text-white mb-4">Our Vision</h3>
+          <p class="text-white/80 leading-relaxed">
+            Onerverse represents the convergence of all digital possibilities into a single, 
+            unified experience. We're building the future where boundaries dissolve and 
+            creativity flows without limits.
+          </p>
+        </div>
+        
+        <div class="glass-card">
+          <h3 class="text-2xl font-bold text-white mb-4">Our Mission</h3>
+          <p class="text-white/80 leading-relaxed">
+            To create an ecosystem where innovation thrives, connections deepen, and every 
+            interaction opens new dimensions of possibility. We're not just building technology; 
+            we're crafting experiences that transcend the ordinary.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Visual -->
+      <div class="relative">
+        <div class="glass-card aspect-square flex items-center justify-center">
+          <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Animated Rings -->
+            <div class="absolute w-64 h-64 border-2 border-purple-500/30 rounded-full animate-pulse"></div>
+            <div class="absolute w-48 h-48 border-2 border-pink-500/30 rounded-full animate-pulse animation-delay-200"></div>
+            <div class="absolute w-32 h-32 border-2 border-blue-500/30 rounded-full animate-pulse animation-delay-400"></div>
+            
+            <!-- Center Logo -->
+            <div class="relative z-10 w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-liquid flex items-center justify-center">
+              <span class="text-white text-4xl font-bold">O</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <div class="glass-card group hover:scale-105 transition-transform duration-300">
+          <div class={`w-16 h-16 rounded-full bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-4 group-hover:animate-pulse`}>
+            <span class="text-2xl text-white">{feature.icon}</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">{feature.title}</h3>
+          <p class="text-white/70">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+      <div class="text-center">
+        <div class="text-4xl font-bold text-gradient mb-2">∞</div>
+        <p class="text-white/70">Possibilities</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-gradient mb-2">1M+</div>
+        <p class="text-white/70">Users</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-gradient mb-2">24/7</div>
+        <p class="text-white/70">Innovation</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-gradient mb-2">1</div>
+        <p class="text-white/70">Universe</p>
+      </div>
+    </div>
+  </div>
+</section>

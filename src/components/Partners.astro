@@ -1,0 +1,155 @@
+---
+const partners = [
+  {
+    name: 'Alex Rivera',
+    tag: '@alexcreates',
+    followers: '2.3M',
+    category: 'Tech & Innovation',
+    image: 'https://i.pravatar.cc/300?img=1',
+    color: 'purple'
+  },
+  {
+    name: 'Sophia Chen',
+    tag: '@sophiatech',
+    followers: '1.8M',
+    category: 'AI & Future',
+    image: 'https://i.pravatar.cc/300?img=2',
+    color: 'pink'
+  },
+  {
+    name: 'Marcus Johnson',
+    tag: '@marcusdigital',
+    followers: '3.1M',
+    category: 'Digital Art',
+    image: 'https://i.pravatar.cc/300?img=3',
+    color: 'blue'
+  },
+  {
+    name: 'Luna Park',
+    tag: '@lunaverse',
+    followers: '2.7M',
+    category: 'Virtual Worlds',
+    image: 'https://i.pravatar.cc/300?img=4',
+    color: 'cyan'
+  },
+  {
+    name: 'David Storm',
+    tag: '@stormcreative',
+    followers: '1.5M',
+    category: 'Web3 & Crypto',
+    image: 'https://i.pravatar.cc/300?img=5',
+    color: 'purple'
+  },
+  {
+    name: 'Emma Wilson',
+    tag: '@emmacodes',
+    followers: '2.1M',
+    category: 'Development',
+    image: 'https://i.pravatar.cc/300?img=6',
+    color: 'pink'
+  },
+  {
+    name: 'Ryan Torres',
+    tag: '@ryantech',
+    followers: '1.9M',
+    category: 'Gaming & VR',
+    image: 'https://i.pravatar.cc/300?img=7',
+    color: 'blue'
+  },
+  {
+    name: 'Zara Ahmed',
+    tag: '@zaradesigns',
+    followers: '2.5M',
+    category: 'UX & Design',
+    image: 'https://i.pravatar.cc/300?img=8',
+    color: 'cyan'
+  }
+];
+
+const getGradient = (color: string) => {
+  const gradients = {
+    purple: 'from-purple-500 to-purple-700',
+    pink: 'from-pink-500 to-pink-700',
+    blue: 'from-blue-500 to-blue-700',
+    cyan: 'from-cyan-500 to-cyan-700'
+  };
+  return gradients[color as keyof typeof gradients] || gradients.purple;
+};
+---
+
+<section id="partners" class="relative py-20 px-4 bg-black">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">
+        <span class="text-gradient">Our Partners</span>
+      </h2>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto">
+        Collaborating with visionary influencers shaping the digital future
+      </p>
+    </div>
+
+    <!-- Partners Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {partners.map((partner, index) => (
+        <div 
+          class="glass-card group relative overflow-hidden hover:scale-105 transition-all duration-300"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <!-- Animated Background -->
+          <div class={`absolute inset-0 bg-gradient-to-br ${getGradient(partner.color)} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+          
+          <!-- Content -->
+          <div class="relative z-10">
+            <!-- Profile Image -->
+            <div class="relative mb-4">
+              <div class="w-20 h-20 mx-auto rounded-full overflow-hidden ring-2 ring-white/20 group-hover:ring-white/40 transition-all">
+                <img 
+                  src={partner.image} 
+                  alt={partner.name}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r ${getGradient(partner.color)} rounded-full opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+            </div>
+            
+            <!-- Info -->
+            <h3 class="text-lg font-bold text-white text-center">{partner.name}</h3>
+            <p class="text-center">
+              <span class={`text-transparent bg-clip-text bg-gradient-to-r ${getGradient(partner.color)} font-semibold`}>
+                {partner.tag}
+              </span>
+            </p>
+            
+            <!-- Stats -->
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <div class="flex justify-between items-center text-sm">
+                <span class="text-white/60">{partner.category}</span>
+                <span class="text-white/80 font-semibold">{partner.followers}</span>
+              </div>
+            </div>
+            
+            <!-- Connect Button -->
+            <button class="mt-4 w-full glass-button text-white text-sm py-2 group-hover:scale-105 transition-transform">
+              Connect
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-20 text-center">
+      <div class="glass-card max-w-2xl mx-auto">
+        <h3 class="text-2xl font-bold text-white mb-4">Become a Partner</h3>
+        <p class="text-white/70 mb-6">
+          Join our network of innovative creators and influencers. Together, we're building the future of digital experiences.
+        </p>
+        <button class="glass-button text-white px-8 py-3 font-semibold relative overflow-hidden group">
+          <span class="relative z-10">Apply Now</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
