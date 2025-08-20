@@ -6,12 +6,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true
-    }
-  }),
+  output: 'static',
+  adapter: cloudflare(),
   integrations: [
     react(),
     tailwind()
@@ -19,6 +15,18 @@ export default defineConfig({
   vite: {
     ssr: {
       external: ['three']
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'three-vendor': ['three'],
+            'react-vendor': ['react', 'react-dom'],
+            'three-fiber': ['@react-three/fiber', '@react-three/drei']
+          }
+        }
+      },
+      chunkSizeWarningLimit: 600
     }
   }
 });

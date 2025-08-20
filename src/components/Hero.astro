@@ -4,8 +4,8 @@ import HeroSimple from './HeroSimple.tsx';
 
 <section id="home" class="relative">
   <!-- Three.js Scene with integrated content -->
-  <HeroSimple client:only="react" />
-</section>
+  <!-- Using client:visible for lazy loading when in viewport -->
+  <HeroSimple client:visible />
 
 <style>
   @keyframes fadeIn {
